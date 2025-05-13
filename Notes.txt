@@ -1,0 +1,32 @@
+file path:
+cd C:\Users\nrush\OneDrive\Documents\Coop\W2025\ImageProcessing\GradientProject\Exp5
+
+//command prompt
+
+ffmpeg -i Part1.mov -vf "fps=1/60,select='gte(t,51)'" -frames:v 30 frame_%04d.png
+
+ffmpeg -i Part2.mov -vf "fps=1/60,select='gte(t,0)'" -frames:v 30 frame1_%04d.png
+
+ffmpeg -i Part3.mov -vf "fps=1/60,select='gte(t,0)'" -frames:v 30 frame2_%04d.png
+
+ffmpeg -i Part4.mov -vf "fps=1/60,select='gte(t,0)'" -frames:v 22 frame3_%04d.png
+
+
+//scale
+makeOval(708, 270, 664, 670);
+
+diameter = 52.62mm
+
+minimum sample size = 42.4176
+max sample size = 103.2957
+Minimum Brightness threshold
+
+//Part1 and Part2
+H:0-49
+S:0-255
+B:116-255
+Adjustment Factor Used:10
+
+
+//Excel Formula
+=SQRT(INDEX($C:$C, (ROW()-ROW($J$2))*3 + COLUMN()-COLUMN($J$2) + 2))
